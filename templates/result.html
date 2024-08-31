@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+</head>
+<body>
+    <h1>Weather Results for {{ weather_info.city }}</h1>
+    <ul>
+        <li>City: {{ weather_info.city }}</li>
+        <li>State: {{ weather_info.state }}</li>
+        <li>Country: {{ weather_info.country }}</li>
+        <li>Temperature: {{ weather_info.temperature }} {{ weather_info.units }}</li>
+        <li>Feels Like: {{ weather_info.feels_like }} {{ weather_info.units }}</li>
+        <li>Pressure: {{ weather_info.pressure }} hPa</li>
+        <li>Humidity: {{ weather_info.humidity }}%</li>
+        <li>Low: {{ weather_info.low }} {{ weather_info.units }}</li>
+        <li>High: {{ weather_info.high }} {{ weather_info.units }}</li>
+        <li>Wind Speed: {{ weather_info.wind_speed }} m/s</li>
+        <li>Wind Degree: {{ weather_info.wind_deg }}°</li>
+        <li>Description: {{ weather_info.description }}</li>
+        <li>Category: {{ weather_info.category }}</li>
+        <li>Date/Time: {{ weather_info.date_time }}</li>
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Search</a>
+</body>
+</html>

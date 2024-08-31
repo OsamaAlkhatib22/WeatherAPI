@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather Information</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('index') }}" method="POST">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="state">State (if US):</label>
+        <input type="text" id="state" name="state"><br>
+
+        <label for="country">Country (2-letter code):</label>
+        <input type="text" id="country" name="country" required><br>
+
+        <label for="units">Units:</label>
+        <select id="units" name="units">
+            <option value="metric">Metric</option>
+            <option value="imperial">Imperial</option>
+            <option value="standard">Standard</option>
+        </select><br>
+
+        <input type="submit" value="Get Weather">
+    </form>
+</body>
+</html>
